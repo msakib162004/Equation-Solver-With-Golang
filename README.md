@@ -3,11 +3,12 @@
 Problem Description:
 
 Write a golang program which could evaluate equations like below:
+
   => ((1+2)*(4/2))
   Ans: 6
 
+
 Approch:
-  
   1. Took input from user in infix order.
       Example: ((1+2)*(4/2))
   2. Convert Infix order To Postfix order.
