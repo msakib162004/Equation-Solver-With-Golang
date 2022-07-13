@@ -85,7 +85,7 @@ func infixToPostfix(infix string) string {
 	return postfix
 }
 
-// stack start
+// Stack Start From Here
 
 type StackInt struct {
 	s []int
@@ -132,17 +132,15 @@ func (s *StackInt) Top() int {
 	return res
 }
 
-// stack end
+// stack End Here
 
 func main() {
 	var stack StackInt                 // create a stack variable of type Stack
 	fmt.Print("Enter Your Equation: ") //Print function is used to display output in same line
 	var infix string
-	fmt.Scanln(&infix)
-	//fmt.Print(infix)
+	fmt.Scanln(&infix) // Taking input from user
 	postfix := infixToPostfix(infix)
 	//fmt.Printf("%s infix has %s postfix \n", infix, postfix)
-
 	for i := 0; i < len(postfix); i++ {
 		if postfix[i] != '+' && postfix[i] != '-' && postfix[i] != '/' && postfix[i] != '*' {
 			int1, _ := strconv.ParseInt(string(postfix[i]), 6, 12)
@@ -161,11 +159,7 @@ func main() {
 					stack.Push(b / a) // Add an item
 				}
 			}
-
 		}
-
 	}
-	result := stack.Pop()
-	fmt.Println(result)
-
+	fmt.Println(stack.Pop())
 }
